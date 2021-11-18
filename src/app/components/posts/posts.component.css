@@ -1,0 +1,11 @@
+.posts{
+  display: flex;
+
+}
+.posts-left{
+  width: 50%;
+
+}
+.posts-details{
+  width: 50%;
+}

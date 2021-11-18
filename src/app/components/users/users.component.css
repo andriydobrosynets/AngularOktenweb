@@ -1,0 +1,11 @@
+.users{
+  display: flex;
+
+}
+.users-left{
+  width: 50%;
+
+}
+.users-details{
+  width: 50%;
+}

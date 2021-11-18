@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-
-import {Post} from "../../models/Post";
 import {PostService} from "../../services/post.service";
+import {Post} from "../../models/Post";
 
 
 @Component({
@@ -18,6 +17,6 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postclient.getPost(this.id).subscribe(value => this.posts=value)
+    this.postclient.getPosts().subscribe(value => this.posts=value)
   }
 }

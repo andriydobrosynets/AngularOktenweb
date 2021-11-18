@@ -1,3 +1,13 @@
-<app-user *ngFor="let user of users" [user]="user"></app-user>
-details
-<router-outlet></router-outlet>
+<div class="users">
+  <div class="users-left">
+    <h3>Users</h3>
+    <div >
+      <app-user *ngFor="let user of users" [user]="user"></app-user>
+    </div>
+  </div>
+
+  <div class="users-details">
+    <h3>Details</h3>
+    <router-outlet></router-outlet>
+  </div>
+</div>
