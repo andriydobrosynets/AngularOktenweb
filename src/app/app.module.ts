@@ -7,6 +7,10 @@ import { UserComponent } from './components/user/user.component';
 import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostComponent } from './components/post/post.component';
+import {RouterModule} from "@angular/router";
+import { CommentsComponent } from './components/comments/comments.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import {UserResolveService} from "./services/user-resolve.service";
 
 @NgModule({
   declarations: [
@@ -14,11 +18,21 @@ import { PostComponent } from './components/post/post.component';
     UserComponent,
     UsersComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    CommentsComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path:'users',component:UsersComponent,children:[
+          {path:':id',component:UserDetailsComponent, resolve: {data: UserResolveService}}
+          ]},
+
+      {path:'posts',component:PostsComponent},
+      {path:'comments',component:CommentsComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
